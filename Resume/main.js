@@ -125,7 +125,7 @@ div.style.paddingInline = "15em";
   text.innerText = "Education:  ";
   edu.innerText = "Diploma";
   clg.innerText = "Government Polytechnic Bareilly";
-  course.innerText = "Pursuing Full Stack Course from PW Skills."
+  course.innerText = "Pursuing Full Stack Course from PW Skills.";
   education.appendChild(text);
   education.appendChild(edu);
   education.appendChild(clg);
@@ -136,7 +136,7 @@ div.style.paddingInline = "15em";
   text.style.fontWeight = "bold";
   edu.style.fontWeight = "bold";
   clg.style.fontWeight = "bold";
-  course.style.fontWeight = "bold"
+  course.style.fontWeight = "bold";
   // edu.style.color = '';
   // clg.style.color = 'Grey';
 }
@@ -166,11 +166,9 @@ div.style.paddingInline = "15em";
   let title = document.createElement("p");
   let list = document.createElement("ul");
 
-
   skillArr.forEach((value) => {
     let li = document.createElement("li");
 
-    
     let textNode = document.createTextNode(
       typeof value === "object"
         ? `${Object.keys(value)[0]}: ${
@@ -189,7 +187,7 @@ div.style.paddingInline = "15em";
   skillBox.append(title, list);
   div.appendChild(skillBox);
 
-  // Apply CSS styles 
+  // Apply CSS styles
   title.style.fontSize = "1.7em";
   title.style.fontWeight = "bold";
 }
@@ -203,73 +201,79 @@ div.style.paddingInline = "15em";
 // =========================================
 
 {
-    //Project section
+  //Project section
 
-    let projectName = ["PortFolio Website", "TO-DO WebApp"];
-    let projectLink = ["https://portfolio021.netlify.app/", "https://app-todo-0b498b.netlify.app/"];
-    let gitRepoLink = [
-        " https://github.com/98Nishi/Portfolio",
-        " https://github.com/98Nishi/GWM-Web/tree/main/TODO%20app"
-    ];
-    let projectBox = document.createElement('div');
-    let title = document.createElement("p");
-    title.innerText = "Projects:";
-    let infoList = document.createElement("ul");
+  let projectName = ["PortFolio Website", "TO-DO WebApp"];
+  let projectLink = [
+    "https://portfolio021.netlify.app/",
+    "https://app-todo-0b498b.netlify.app/",
+  ];
+  let gitRepoLink = [
+    " https://github.com/98Nishi/Portfolio",
+    " https://github.com/98Nishi/GWM-Web/tree/main/TODO%20app",
+  ];
+  let projectBox = document.createElement("div");
+  let title = document.createElement("p");
+  title.innerText = "Projects:";
+  let infoList = document.createElement("ul");
 
-    let projectInfo1 = {
-        element: ["HTML5", "CSS3", "JavaScript"],
-        achievement: "This project has provided me with valuable experience in web development, including HTML, CSS, and JavaScript, as well as design principles, performance optimization, and the ability to effectively showcase my work.",
-        gitRepo: gitRepoLink[0]
-    };
+  let projectInfo1 = {
+    element: ["HTML5", "CSS3", "JavaScript"],
+    achievement:
+      "This project has provided me with valuable experience in web development, including HTML, CSS, and JavaScript, as well as design principles, performance optimization, and the ability to effectively showcase my work.",
+    gitRepo: gitRepoLink[0],
+  };
 
-    let projectInfo2 = {
-        element: ["HTML5", "CSS3", "JavaScript"],
-        achievement: "By creating a todo web app, I acquired hands-on experience in web development, while also mastering DOM manipulation, event handling, UX design principles.",
-        gitRepo: gitRepoLink[1]
-    };
+  let projectInfo2 = {
+    element: ["HTML5", "CSS3", "JavaScript"],
+    achievement:
+      "By creating a todo web app, I acquired hands-on experience in web development, while also mastering DOM manipulation, event handling, UX design principles.",
+    gitRepo: gitRepoLink[1],
+  };
 
-    projectName.map((value, idx) => {
-        let li = document.createElement('li');
-        let aTag = document.createElement("a");
-        let projectHref = document.createAttribute('href');
+  projectName.map((value, idx) => {
+    let li = document.createElement("li");
+    let aTag = document.createElement("a");
+    let projectHref = document.createAttribute("href");
 
-        aTag.innerText = projectName[idx];
-        projectHref.value = projectLink[idx];
-        aTag.setAttributeNode(projectHref);
-        li.appendChild(aTag);
+    aTag.innerText = projectName[idx];
+    projectHref.value = projectLink[idx];
+    aTag.setAttributeNode(projectHref);
+    li.appendChild(aTag);
 
-        // Add project information to the list item
-        let projectInfo;
-        if (idx === 0) {
-            projectInfo = projectInfo1;
-        } else if (idx === 1) {
-            projectInfo = projectInfo2;
-        }
+    // Add project information to the list item
+    let projectInfo;
+    if (idx === 0) {
+      projectInfo = projectInfo1;
+    } else if (idx === 1) {
+      projectInfo = projectInfo2;
+    }
 
-        let infoParagraph = document.createElement("p");
-        let elementsText = `Elements: ${Array.isArray(projectInfo.element) ? projectInfo.element.join(", ") : ""}`;
-        let achievementText = `Achievements: ${projectInfo.achievement}`;
-        let gitLink = document.createElement("a");
-        gitLink.innerText = "GitHub Repo";
-        gitLink.href = projectInfo.gitRepo;
-        gitLink.target = "_blank";
-        
-        infoParagraph.innerHTML = `${elementsText}<br>${achievementText}<br>`;
-        // infoParagraph.innerText = `${elementsText}\n${achievementText}\n`;
-        infoParagraph.appendChild(gitLink);
-        li.appendChild(infoParagraph);
+    let infoParagraph = document.createElement("p");
+    let elementsText = `Elements: ${
+      Array.isArray(projectInfo.element) ? projectInfo.element.join(", ") : ""
+    }`;
+    let achievementText = `Achievements: ${projectInfo.achievement}`;
+    let gitLink = document.createElement("a");
+    gitLink.innerText = "GitHub Repo";
+    gitLink.href = projectInfo.gitRepo;
+    gitLink.target = "_blank";
 
-        infoList.appendChild(li);
+    infoParagraph.innerHTML = `${elementsText}<br>${achievementText}<br>`;
+    // infoParagraph.innerText = `${elementsText}\n${achievementText}\n`;
+    infoParagraph.appendChild(gitLink);
+    li.appendChild(infoParagraph);
 
-        // css
-        title.style.fontSize = "1.7em";
-        title.style.fontWeight = "bold"
-    });
+    infoList.appendChild(li);
 
-    projectBox.appendChild(title);
-    projectBox.appendChild(infoList);
-    div.appendChild(projectBox);
+    // css
+    title.style.fontSize = "1.7em";
+    title.style.fontWeight = "bold";
+  });
 
+  projectBox.appendChild(title);
+  projectBox.appendChild(infoList);
+  div.appendChild(projectBox);
 }
 
 // ========================================
@@ -295,8 +299,9 @@ div.style.paddingInline = "15em";
   ];
   let certiName = ["Groww With Code", "OASIS INFOBYTE ", "Bootstrap"];
   title.innerText = "Internship and Certificates:";
-  para.innerText = "As a web developer intern, I actively contributed to web development projects, gaining practical experience in HTML, CSS, and JavaScript while collaborating with the development team to create responsive and user-friendly web applications. During my internship, I developed a calculator and a tribute page using HTML, CSS, and JavaScript.The calculator provided accurate calculations, and the tribute page honored a notable individual with informative content and responsive design."
- 
+  para.innerText =
+    "As a web developer intern, I actively contributed to web development projects, gaining practical experience in HTML, CSS, and JavaScript while collaborating with the development team to create responsive and user-friendly web applications. During my internship, I developed a calculator and a tribute page using HTML, CSS, and JavaScript.The calculator provided accurate calculations, and the tribute page honored a notable individual with informative content and responsive design.";
+
   links.map((value, idx) => {
     let li = document.createElement("li");
     let aTag = document.createElement("a");
@@ -306,12 +311,11 @@ div.style.paddingInline = "15em";
     aTag.innerText = certiName[idx];
     li.appendChild(aTag);
     list.appendChild(li);
-    
-  });  
+  });
   certificate.appendChild(title);
-  certificate.appendChild(para)
+  certificate.appendChild(para);
   certificate.appendChild(list);
- 
+
   div.appendChild(certificate);
 
   // css
@@ -322,33 +326,33 @@ div.style.paddingInline = "15em";
 
 // ========================================
 {
-    let hr = document.createElement("hr");
-    hr.style.borderTop = "2px solid grey";
-    div.appendChild(hr);
-  }
-  // =========================================
+  let hr = document.createElement("hr");
+  hr.style.borderTop = "2px solid grey";
+  div.appendChild(hr);
+}
+// =========================================
 
 {
-    let language = ["English", "Hindi"];
-    let languageBox = document.createElement("div");
-    let title = document.createElement("p");
-    let printList = document.createElement("ul");
+  let language = ["English", "Hindi"];
+  let languageBox = document.createElement("div");
+  let title = document.createElement("p");
+  let printList = document.createElement("ul");
 
-    language.map((value) => {
-        let li = document.createElement("li");
+  language.map((value) => {
+    let li = document.createElement("li");
 
-        li.innerText = value;
-        printList.appendChild(li);
-    });
-    title.innerText = "Language:";
-    languageBox.appendChild(title);
-    languageBox.appendChild(printList);
-    div.appendChild(languageBox);
+    li.innerText = value;
+    printList.appendChild(li);
+  });
+  title.innerText = "Language:";
+  languageBox.appendChild(title);
+  languageBox.appendChild(printList);
+  div.appendChild(languageBox);
 
-    // css
+  // css
 
-    title.style.fontSize = "1.5em";
-    title.style.fontWeight = "bold"
+  title.style.fontSize = "1.5em";
+  title.style.fontWeight = "bold";
 }
 
 document.body.appendChild(div);
