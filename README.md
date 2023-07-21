@@ -1,6 +1,5 @@
 # JS_Resume
 This is only made by JavaScript
-Certainly! Here's the modified version of the README file using your name:
 
 # This Resume Created with JavaScript and DOM
 
